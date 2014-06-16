@@ -1,0 +1,23 @@
+{
+  "name": "pennappsfellows.com",
+  "version": "0.1.0",
+  "description": "PennApps Fellows Website",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "~1.0.0",
+    "express": "~3.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PennAppsFellows/website.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/PennAppsFellows/website/issues"
+  }
+}
