@@ -1,0 +1,70 @@
+/* Main */
+.btn-lg {
+    line-height: 2;
+    margin-bottom: 10px;
+}
+
+.services hr {
+    border-top: 1px solid #333333;
+}
+
+.lead {
+    text-align: justify;
+}
+
+li {
+    text-align: left;
+    line-height: 1;
+    margin: 20px auto;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.sponsor-item {
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 400px;
+    margin: 0 auto 30px !important;
+}
+
+.other-sponsors {
+    text-align: center;
+}
+
+.header-button {
+    margin: 0 20px;
+    width: 150px
+}
+
+ul li {
+    font-size: 21px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.PressLink { color: black; }
+
+@media (max-width: 992px) {
+    /* Allows responsive design */
+    .sponsor-item {
+        display: block;
+    }
+}
+
+
+/* Header */
+.profile-img {
+    width: 85%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* Google form styles */
+.ss-q-title {
+    font-weight: normal;
+}
