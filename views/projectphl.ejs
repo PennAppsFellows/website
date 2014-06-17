@@ -21,18 +21,27 @@
     <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <style>
-    .profile-img {
+    	.profile-img {
       width: 85%;
       margin: 0 auto;
       display: block;
       margin-bottom: 10px;
 
     }
-  </head>
 
-  <body>
+    	.header {
+    		background: url(/media/img/mural.jpg) no-repeat center center fixed;
+    	}
 
-    <style>
+    	.text-stroke{
+    	    color: white;
+    	    text-shadow:
+    	    -2px -2px 0 #000,
+    	    2px -2px 0 #000,
+    	    -2px 2px 0 #000,
+    	    2px 2px 0 #000;  
+    	}
+
       .btn-lg {
         line-height: 2;
         margin-bottom: 10px;
@@ -73,6 +82,13 @@
         width: 150px
       }
 
+      .header-img {
+      	max-width: 500px;
+      	margin: 0 auto;
+      	display: block;
+      	margin-bottom: 20px;
+      }
+
       ul li {
         font-size: 21px;
         line-height: 1.4;
@@ -88,13 +104,19 @@
         }
       }
     </style>
+  </head>
+
+  <body>
+
+    
 
     <!-- Full Page Image Header Area -->
     <div id="top" class="header" style = "padding-bottom: 10px; padding-top: 15px">
       <div class="vert-text">
-        <img class="img-responsive" style="display: inline-block" src="media/assets/logo-white.png" />
-
-        <h3 style="color: white;">Intern at a Philly Startup over Summer 2014</h3>
+      	<div class="header-img">
+      		<img class="img-responsive" style="display: inline-block" src="media/assets/projectphl.png" />
+      	</div>
+      	<h3 class="text-stroke" style="margin-bottom: 10px;">Donating technical expertise to better Philadelphia</h3>
         <a href="#about" class="btn btn-default btn-lg header-button">Learn more</a>
       </div>
     </div>
