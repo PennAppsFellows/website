@@ -28,6 +28,31 @@
       margin-bottom: 10px;
 
     }
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type='text/javascript'>//<![CDATA[
+var formID = 'ss-form';
+var formKey = '17Plp4Wo2uD_i9bUykRgcPeELXeBCtouRWTkx3_jmJNk';
+var labelName = 'ssTestLabel';
+var testField = 'ssTestValue';
+var submitted = false;
+
+$(document).ready(function() {
+ var ssForm = $('#'+formID);
+
+ var randomInt = Math.floor((Math.random()*100)+1);
+ $('#'+labelName).text('If you\'re human, type "' + randomInt + '" in the box given below');
+  
+ ssForm.submit(function(evt){
+  if($('#'+testField).val() == randomInt){
+   ssForm.attr({'action' : 'https://docs.google.com/forms/d/' + formKey + '/formResponse'});
+   return true;
+  }else{
+   alert('You need to repeat the number "' + randomInt + '"');
+    return false;
+  }
+ });
+});
+//]]></script>
   </head>
 
   <body>
@@ -148,6 +173,8 @@
           <hr/>
           <p class="lead">
         		<iframe src="https://docs.google.com/forms/d/17Plp4Wo2uD_i9bUykRgcPeELXeBCtouRWTkx3_jmJNk/viewform?embedded=true" width="560" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+				<label id="ssTestLabel" for="ssTestValue"></label>
+<input type="text" name="ssTestValue" value="" id="ssTestValue" />
            </p>
         </div>
       </div>
