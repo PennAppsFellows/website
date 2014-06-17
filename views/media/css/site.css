@@ -36,6 +36,7 @@ li {
 
 .header {
     background: url(/media/img/mural.jpg) no-repeat center center fixed;
+    background-size: 100% auto;
 }
 
 .header-img {
