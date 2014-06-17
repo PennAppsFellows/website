@@ -9,8 +9,8 @@ app.get('/', function(req, res) {
         res.render("index.ejs");
 });
 
-app.get('/ideas', function(req, res) {
-	res.render('ideas.ejs');
+app.get('/projectphl', function(req, res) {
+	res.render('projectphl.ejs');
 });
 
 app.listen(app.get('port'));
