@@ -68,3 +68,11 @@ ul li {
 .ss-q-title {
     font-weight: normal;
 }
+
+.ss-navigate {
+    text-align: center;
+}
+
+#navigation-table {
+    margin: auto;
+}
