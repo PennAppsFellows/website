@@ -33,6 +33,12 @@ app.post('/vote', function(req, res) {
 
 	if(!query) {
 		var vote = new Vote({email: email, idea: idea});
+		
+		vote.save(function(err, data){
+			if(err) {
+				console.log(err);
+			}
+		});
 	}
 
 });
