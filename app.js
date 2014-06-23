@@ -37,14 +37,14 @@ app.post('/vote', function(req, res) {
 		vote.save(function(err, data){
 			if(err) {
 				console.log(err);
-				res.send(500, {error: "There was an error saving the vote, please try again"});
+				res.send(500, {error: "There was an error saving the vote, please try again."});
 			}
 			else {
 				res.send(200);
 			}
 		});
 	}
-	
+
 	else {
 		res.send(500, {error: "Voter has already voted."});
 	}
