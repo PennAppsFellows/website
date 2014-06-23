@@ -3,7 +3,7 @@ var app = express();
 
 //Mongoose and connection to MongoDB
 var mongoose = require('mongoose');
-ongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test');
 
 
 app.set('port', (process.env.PORT || 8080))
