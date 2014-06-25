@@ -1,20 +1,20 @@
 $(function() {
-    $('form#vote').submit(function(e) {
+    // Submit vote data.
+    var submitVote = function(e) {
         e.preventDefault();
 
         var $this = $(this);
 
-        $.ajax({
+        return $.ajax({
             type: 'POST',
             url: '',
             dataType: 'json',
-            data: $this.serialize(),
-            success: function() {
-                // Success handler
-            },
-            error: function() {
-                // Error handler
-            }
+            data: $this.serialize()
         });
+    };
+
+    // Events.
+    $('form#vote').submit(function(e) {
+        var req = submitVote(e);
     });
 });
