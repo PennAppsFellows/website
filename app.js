@@ -29,25 +29,28 @@ app.post('/vote', function(req, res) {
 
 	var Vote = mongoose.model('Vote', VoteSchema);
 
-	var query = Vote.findOne({ 'email': email });
+	var query = Vote.where({ 'email': email });
 
-	if(!query) {
-		var vote = new Vote({email: email, idea: idea});
-		
-		vote.save(function(err, data){
-			if(err) {
-				console.log(err);
-				res.send(500, {error: "There was an error saving the vote, please try again."});
-			}
-			else {
-				res.send(200);
-			}
-		});
-	}
+	Vote.findOne({ 'email': email }, function(err, entry) {
+		if(!entry) {
+			var vote = new Vote({email: email, idea: idea});
+			
+			vote.save(function(err, data) {
+				if(err) {
+					console.log(err);
+					res.send(500, {error: "There was an error saving the vote, please try again."});
+				}
+				else {
+					res.send(200);
+				}
+			});
+		}
 
-	else {
-		res.send(500, {error: "Voter has already voted."});
-	}
+		else {
+			res.send(500, {error: "Voter has already voted."});
+		}
+
+	});	
 
 });
 
