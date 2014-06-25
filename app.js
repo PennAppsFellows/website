@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-        res.render("index.ejs");
+    res.render("index.ejs");
 });
 
 app.get('/projectphl', function(req, res) {
@@ -29,15 +29,15 @@ app.post('/vote', function(req, res) {
 
 	var Vote = mongoose.model('Vote', VoteSchema);
 
-	var query = Vote.where({ 'email': email });
-
+	//if email is found, it will be passed into the callback function's "entry" parameter.
 	Vote.findOne({ 'email': email }, function(err, entry) {
-		if(!entry) {
+		//if entry is null, add the vote.
+		if(entry == null) {
 			var vote = new Vote({email: email, idea: idea});
 			
 			vote.save(function(err, data) {
 				if(err) {
-					console.log(err);
+					console.log("There was an error: " + err);
 					res.send(500, {error: "There was an error saving the vote, please try again."});
 				}
 				else {
@@ -45,12 +45,12 @@ app.post('/vote', function(req, res) {
 				}
 			});
 		}
-
+		//otherwise, send back a bad request. Do not save anything to the db.
 		else {
 			res.send(500, {error: "Voter has already voted."});
 		}
 
-	});	
+	});
 
 });
 
