@@ -27,7 +27,7 @@ app.post('/vote', function(req, res) {
 	 	idea: {type: "String"}
 	});
 
-	var Vote = mongoose.model('Vote', VoteSchema);
+	var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
 
 	//if email is found, it will be passed into the callback function's "entry" parameter.
 	Vote.findOne({ 'email': email }, function(err, entry) {
