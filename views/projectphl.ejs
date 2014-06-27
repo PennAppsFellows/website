@@ -107,32 +107,52 @@
     <div class="about">
       <div class="container">
         <div class="col-md-6 col-md-offset-3 text-center">
-          <h1>Submit Your Project Idea</h1>
-          <hr/>
+          <h1>Vote For Projects</h1>
+          <hr>
 
           <!-- alerts -->
-          <div class="alerts">
+          <div class="alerts hidden">
             <div class="alert alert-success">Thank you!</div>
             <div class="alert alert-danger">Something was wrong!</div>
           </div>
           <!-- /alert -->
 
           <!-- form -->
-          <div class="ss-form lead">
-            <div class="ss-required-asterisk" aria-hidden="true">* Required</div>
-            <form action="" method="POST" id="ss-form" target="_self" onsubmit="">
-              <label for="email">E-Mail*</label>
-                <input name="email" id="email" type="email" required placeholder="user@example.com" class="form-control">
-              <br>
-              <label for="idea">Idea*</label>
-              <br>
-                <input type="radio" name="idea" value="1" required>Idea 1<br>
-                <input type="radio" name="idea" value="2" required>Idea 2<br>
-                <input type="radio" name="idea" value="3" required>Idea 3<br>
-                <input type="radio" name="idea" value="4" required>Idea 4<br>
-
-              <br>  
-              <input type="submit" class="btn btn-block btn-success" value="Submit">
+          <div class="text-left">
+            <form action="" method="POST" target="_self" onsubmit="" id="vote-form">
+              <div class="text-right">* Required</div>
+              <fieldset>
+                <div class="control-group form-group">
+                  <label for="email" class="control-label">Email *</label>
+                  <input type="email" name="email" id="vote-email" class="form-control"
+                         placeholder="me@example.com" required>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label>Idea *</label>
+                <div class="control-group form-group">
+                  <div class="radio">
+                    <input type="radio" name="idea" value="1" id="vote-idea-1" required>
+                    <label for="idea-1" class="control-label">Idea 1</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="idea" value="2" id="vote-idea-2" required>
+                    <label for="idea-2" class="control-label">Idea 2</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="idea" value="3" id="vote-idea-3" required>
+                    <label for="idea-3" class="control-label">Idea 3</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="idea" value="4" id="vote-idea-4" required>
+                    <label for="idea-4" class="control-label">Idea 4</label>
+                  </div>
+                </div>
+              </fieldset>
+              <hr>
+              <div class="control-group form-group">
+                <input type="submit" value="Submit" class="btn btn-block btn-success">
+              </div>
             </form>
           </div>
           <!-- /form -->
