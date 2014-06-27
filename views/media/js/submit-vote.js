@@ -1,19 +1,5 @@
 $(function() {
-    // Submit vote data.
-    var submitVote = function() {
-        var $this = $(this);
-
-        return $.ajax({
-            type: 'POST',
-            url: '',
-            dataType: 'json',
-            data: $this.serialize()
-        });
-
-        $.post('', $(this).serialize(), function() {}, function() {});
-    };
-
-    // Validation
+    // Validation and submission
     $('#vote-form').bootstrapValidator({
         live: 'disabled',
         message: 'This field is required',
@@ -42,10 +28,5 @@ $(function() {
                 }
             }
         }
-    });
-
-    // Events
-    $('form#vote').submit(function(e) {
-        var req = submitVote(e);
     });
 });
