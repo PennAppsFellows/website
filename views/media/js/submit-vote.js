@@ -5,13 +5,16 @@ $(function() {
         message: 'This field is required',
         submitButtons: 'input[type="submit"]',
         submitHandler: function(validator, form, btn) {
+            var $doneAlert = $('div#vote-container > div.alerts > div.alert-success'),
+                $failAlert = $('div#vote-container > div.alerts > div.alert-danger');
+
             var xhr = $.post('/vote', form.serialize());
             xhr.done(function(data) {
-                $('div#vote-container > div.alerts > div.alert-success')
-                    .removeClass('hidden');
+                $doneAlert.removeClass('hidden');
+                $failAlert.addClass('hidden');
             }).fail(function(data) {
-                $('div#vote-container > div.alerts > div.alert-danger')
-                    .removeClass('hidden');
+                $failAlert.removeClass('hidden');
+                $doneAlert.addClass('hidden');
             });
         },
         fields: {
