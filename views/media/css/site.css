@@ -60,11 +60,7 @@ li {
 
 .text-stroke {
     color: white;
-    text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;
+    text-shadow: -2px 2px 5px #000;
 }
 
 ul li {
