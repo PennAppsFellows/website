@@ -111,15 +111,8 @@
           <h1>Vote For Projects</h1>
           <hr>
 
-          <!-- alerts -->
-          <div class="alerts hidden">
-            <div class="alert alert-success">Thank you!</div>
-            <div class="alert alert-danger">Something was wrong!</div>
-          </div>
-          <!-- /alert -->
-
           <!-- form -->
-          <div class="text-left">
+          <div id="vote-container" class="text-left">
             <form action="" method="POST" target="_self" onsubmit="" id="vote-form">
               <div class="text-right">* Required</div>
               <fieldset>
@@ -152,9 +145,16 @@
               </fieldset>
               <hr>
               <div class="control-group form-group">
-                <input type="submit" value="Submit" class="btn btn-block btn-success">
+                <input type="submit" value="Submit"
+                       id="vote-submit" class="btn btn-block btn-success">
               </div>
             </form>
+            <!-- alerts -->
+            <div class="alerts text-center">
+              <div class="alert alert-success hidden">Thanks for your vote!</div>
+              <div class="alert alert-danger hidden">Something went wrong - try again!</div>
+            </div>
+            <!-- /alert -->
           </div>
           <!-- /form -->
 

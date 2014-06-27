@@ -6,6 +6,13 @@ $(function() {
         submitButtons: 'input[type="submit"]',
         submitHandler: function(validator, form, btn) {
             var xhr = $.post('/vote', form.serialize());
+            xhr.done(function(data) {
+                $('div#vote-container > div.alerts > div.alert-success')
+                    .removeClass('hidden');
+            }).fail(function(data) {
+                $('div#vote-container > div.alerts > div.alert-danger')
+                    .removeClass('hidden');
+            });
         },
         fields: {
             email: {
