@@ -47,11 +47,86 @@
             <a href="/"><img class="img-responsive" style="display: inline-block" src="media/img/projectphllogo.png" /></a>
         </div>
         <h3 class="text-stroke" style="margin-bottom: 10px;">A PennApps Fellows Project: Donating Technical Expertise to Better Philadelphia</h3>
+        <a href="#vote" class="btn btn-default btn-lg header-button">Vote</a>
         <a href="#about" class="btn btn-default btn-lg header-button">Learn More</a>
       </div>
     </div>
 
     <!-- /Full Page Image Header Area -->
+
+    <div id="vote" class="about">
+      <div class="container">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <h1>Vote For Project Ideas</h1>
+          <hr>
+
+          <!-- form -->
+          <div id="vote-container" class="text-left">
+            <form action="" method="POST" target="_self" onsubmit="" id="vote-form">
+              <div class="text-right">* Required</div>
+              <fieldset>
+                <div class="control-group form-group">
+                  <label for="vote-email" class="control-label">Email *</label>
+                  <input type="email" name="email" id="vote-email" class="form-control"
+                         placeholder="me@example.com">
+                </div>
+              </fieldset>
+              <fieldset>
+                <label>Idea *</label>
+                <div class="control-group form-group ideas">
+                  <div class="radio">
+                    <input type="radio" name="idea" value="1" id="vote-idea-1">
+                    <label for="vote-idea-1" class="control-label">
+                      <h3>Idea Title</h3>
+                      <p>Content</p>
+                      <a href="#more">Learn More</a>
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="idea" value="2" id="vote-idea-2">
+                    <label for="vote-idea-2" class="control-label">
+                      <h3>Idea Title</h3>
+                      <p>Content</p>
+                      <a href="#more">Learn More</a>
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="idea" value="3" id="vote-idea-3">
+                    <label for="vote-idea-3" class="control-label">
+                      <h3>Idea Title</h3>
+                      <p>Content</p>
+                      <a href="#more">Learn More</a>
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="idea" value="4" id="vote-idea-4">
+                    <label for="vote-idea-4" class="control-label">
+                      <h3>Idea Title</h3>
+                      <p>Content</p>
+                      <a href="#more">Learn More</a>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+              <hr>
+              <div class="control-group form-group">
+                <input type="submit" value="Submit"
+                       id="vote-submit" class="btn btn-block btn-lg btn-success">
+              </div>
+            </form>
+            <!-- alerts -->
+            <div class="alerts text-center">
+              <div class="alert alert-success hidden">Thanks for your vote!</div>
+              <div class="alert alert-danger hidden">Something went wrong - try again!</div>
+            </div>
+            <!-- /alert -->
+          </div>
+          <!-- /form -->
+
+        </div>
+      </div>
+    </div>
+
     <div id="about" class="about">
       <div class="container">
         <div class="col-md-6 col-md-offset-3 text-center">
@@ -101,63 +176,6 @@
                     <li>August 1: Showcase project at Open Access Philly</li>
                 </ul>
             </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="about">
-      <div class="container">
-        <div class="col-md-6 col-md-offset-3 text-center">
-          <h1>Vote For Project Ideas</h1>
-          <hr>
-
-          <!-- form -->
-          <div id="vote-container" class="text-left">
-            <form action="" method="POST" target="_self" onsubmit="" id="vote-form">
-              <div class="text-right">* Required</div>
-              <fieldset>
-                <div class="control-group form-group">
-                  <label for="vote-email" class="control-label">Email *</label>
-                  <input type="email" name="email" id="vote-email" class="form-control"
-                         placeholder="me@example.com">
-                </div>
-              </fieldset>
-              <fieldset>
-                <label>Idea *</label>
-                <div class="control-group form-group">
-                  <div class="radio">
-                    <input type="radio" name="idea" value="1" id="vote-idea-1">
-                    <label for="vote-idea-1" class="control-label">Idea 1</label>
-                  </div>
-                  <div class="radio">
-                    <input type="radio" name="idea" value="2" id="vote-idea-2">
-                    <label for="vote-idea-2" class="control-label">Idea 2</label>
-                  </div>
-                  <div class="radio">
-                    <input type="radio" name="idea" value="3" id="vote-idea-3">
-                    <label for="vote-idea-3" class="control-label">Idea 3</label>
-                  </div>
-                  <div class="radio">
-                    <input type="radio" name="idea" value="4" id="vote-idea-4">
-                    <label for="vote-idea-4" class="control-label">Idea 4</label>
-                  </div>
-                </div>
-              </fieldset>
-              <hr>
-              <div class="control-group form-group">
-                <input type="submit" value="Submit"
-                       id="vote-submit" class="btn btn-block btn-success">
-              </div>
-            </form>
-            <!-- alerts -->
-            <div class="alerts text-center">
-              <div class="alert alert-success hidden">Thanks for your vote!</div>
-              <div class="alert alert-danger hidden">Something went wrong - try again!</div>
-            </div>
-            <!-- /alert -->
-          </div>
-          <!-- /form -->
-
         </div>
       </div>
     </div>

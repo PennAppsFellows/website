@@ -60,11 +60,12 @@ li {
 
 .text-stroke {
     color: white;
-    text-shadow:
+    text-shadow: 0 0 6px black;
+    /* text-shadow:
     -2px -2px 0 #000,
     2px -2px 0 #000,
     -2px 2px 0 #000,
-    2px 2px 0 #000;
+    2px 2px 0 #000; */
 }
 
 ul li {
@@ -100,4 +101,21 @@ ul li {
 
 #navigation-table {
     margin: auto;
+}
+
+#vote-container {
+
+}
+
+.ideas label {
+    display: block;
+    padding: 8px;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+}
+
+.ideas label h3 {
+    margin-top: 0px;
 }
