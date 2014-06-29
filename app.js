@@ -30,15 +30,19 @@ app.post('/vote', function(req, res) {
 	var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
 
 	//if email is found, it will be passed into the callback function's "entry" parameter.
-	Vote.findOne({ 'email': email }, function(err, entry) {
+	Vote.findOne({ 'email': email }, function(err1, entry) {
+		if(err1) {
+			res.send(500, {error: "There was an error during the database lookup."});
+		}
+
 		//if entry is null, add the vote.
 		if(entry == null) {
 
 			for (var i = 0; i < ideas.length; i++) {
 				var vote = new Vote({email: email, idea: ideas[i]});
 				
-				vote.save(function(err, data) {
-					if(err) {
+				vote.save(function(err2, data) {
+					if(err2) {
 						console.log("There was an error: " + err);
 						res.send(500, {error: "There was an error saving the vote, please try again."});
 					}
