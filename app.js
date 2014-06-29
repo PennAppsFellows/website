@@ -34,7 +34,7 @@ app.post('/vote', function(req, res) {
 		//if entry is null, add the vote.
 		if(entry == null) {
 
-			for (int i = 0; i < ideas.length; i++) {
+			for (var i = 0; i < ideas.length; i++) {
 				var vote = new Vote({email: email, idea: ideas[i]});
 				
 				vote.save(function(err, data) {
