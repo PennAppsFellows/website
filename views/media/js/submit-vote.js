@@ -29,7 +29,7 @@ $(function() {
                     }
                 }
             },
-            idea: {
+            ideas: {
                 enabled: true,
                 validators: {
                     notEmpty: {
