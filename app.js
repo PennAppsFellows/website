@@ -20,7 +20,7 @@ app.get('/projectphl', function(req, res) {
 
 app.post('/vote', function(req, res) {
 	var email = req.params.email;
-	var idea = req.params.idea;
+	var ideas = req.params.idea;
 
 	var VoteSchema = new Schema({
 		email: {type: "String"},
@@ -33,17 +33,20 @@ app.post('/vote', function(req, res) {
 	Vote.findOne({ 'email': email }, function(err, entry) {
 		//if entry is null, add the vote.
 		if(entry == null) {
-			var vote = new Vote({email: email, idea: idea});
-			
-			vote.save(function(err, data) {
-				if(err) {
-					console.log("There was an error: " + err);
-					res.send(500, {error: "There was an error saving the vote, please try again."});
-				}
-				else {
-					res.send(200);
-				}
-			});
+
+			for (int i = 0; i < ideas.length; i++) {
+				var vote = new Vote({email: email, idea: ideas[i]});
+				
+				vote.save(function(err, data) {
+					if(err) {
+						console.log("There was an error: " + err);
+						res.send(500, {error: "There was an error saving the vote, please try again."});
+					}
+					else {
+						res.send(200);
+					}
+				});
+			}
 		}
 		//otherwise, send back a bad request. Do not save anything to the db.
 		else {
