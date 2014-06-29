@@ -24,7 +24,7 @@ app.post('/vote', function(req, res) {
 
 	var VoteSchema = new Schema({
 		email: {type: "String"},
-	 	idea: {type: "String"}
+	 	idea: {type: "Number"}
 	});
 
 	var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
