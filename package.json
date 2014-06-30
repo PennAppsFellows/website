@@ -6,6 +6,7 @@
   "dependencies": {
     "ejs": "~1.0.0",
     "express": "~3.4.7",
+    "mongodb": "*",
     "mongoose": "~3.8.x"
   },
   "devDependencies": {},

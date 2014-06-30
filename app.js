@@ -20,7 +20,7 @@ app.get('/projectphl', function(req, res) {
 
 app.post('/vote', function(req, res) {
 	var email = req.params.email;
-	var ideas = req.params.ideas;
+	var ideas = new Array(req.params.ideas);
 
 	var Schema = mongoose.Schema;
 
