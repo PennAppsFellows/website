@@ -5,16 +5,24 @@ $(function() {
         message: 'This field is required',
         submitButtons: 'input[type="submit"]',
         submitHandler: function(validator, form, btn) {
-            var $doneAlert = $('div#vote-container > div.alerts > div.alert-success'),
-                $failAlert = $('div#vote-container > div.alerts > div.alert-danger');
+            var $successAlert = $('#vote-alert-success'),
+                $errorAlert = $('#vote-alert-error'),
+                $emailAlert = $('#vote-alert-email');
 
             var xhr = $.post('/vote', form.serialize());
             xhr.done(function(data) {
-                $doneAlert.removeClass('hidden');
-                $failAlert.addClass('hidden');
+                $errorAlert.addClass('hidden');
+                $emailAlert.addClass('hidden');
+                $successAlert.removeClass('hidden');
             }).fail(function(data) {
-                $failAlert.removeClass('hidden');
-                $doneAlert.addClass('hidden');
+                if (data['error'] === 'Voter has already voted.') {
+                    $errorAlert.addClass('hidden');
+                    $emailAlert.removeClass('hidden');
+                } else {
+                    $emailAlert.addClass('hidden');
+                    $errorAlert.removeClass('hidden');
+                }
+                $successAlert.addClass('hidden');
             });
         },
         fields: {
