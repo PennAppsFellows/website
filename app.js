@@ -62,7 +62,7 @@ app.post('/vote', function(req, res) {
 		}
 		//otherwise, send back a bad request. Do not save anything to the db.
 		else {
-			res.send(500, {error: "Voter has already voted."});
+            res.send(500, {error: "Voter has already voted.", emailUsed: true});
 		}
 
 	});

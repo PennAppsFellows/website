@@ -15,7 +15,8 @@ $(function() {
                 $emailAlert.addClass('hidden');
                 $successAlert.removeClass('hidden');
             }).fail(function(data) {
-                if (data['error'] === 'Voter has already voted.') {
+                var res = JSON.parse(data.responseText);
+                if (res['emailUsed']) {
                     $errorAlert.addClass('hidden');
                     $emailAlert.removeClass('hidden');
                 } else {
