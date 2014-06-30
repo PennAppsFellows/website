@@ -13,16 +13,16 @@ var VoteSchema = new Schema({
 	 idea: {type: "Number"}
 });
 try {
-	console.log("enters try block");
 	var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
 }
-catch(error) {console.log("catches error")}
-console.log("outside try-catch");
+catch(error) {}
+
 
 
 app.set('port', (process.env.PORT || 8080))
 app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
+app.use(express.bodyParser());
 
 app.get('/', function(req, res) {
     res.render("index.ejs");
