@@ -5,6 +5,16 @@ var app = express();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 
+//setting up schemas and models
+var Schema = mongoose.Schema;
+
+var VoteSchema = new Schema({
+	email: {type: "String"},
+	 idea: {type: "Number"}
+});
+
+var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
+
 
 app.set('port', (process.env.PORT || 8080))
 app.use(express.static(__dirname + '/views'));
@@ -22,14 +32,6 @@ app.post('/vote', function(req, res) {
 	var email = req.params.email;
 	var ideas = new Array(req.params.ideas);
 
-	var Schema = mongoose.Schema;
-
-	var VoteSchema = new Schema({
-		email: {type: "String"},
-	 	idea: {type: "Number"}
-	});
-
-	var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
 
 	//if email is found, it will be passed into the callback function's "entry" parameter.
 	Vote.findOne({ 'email': email }, function(err1, entry) {
