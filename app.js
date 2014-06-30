@@ -34,7 +34,7 @@ app.get('/projectphl', function(req, res) {
 
 app.post('/vote', function(req, res) {
 	var email = req.body.email;
-	var ideas = new Array(req.body.ideas);
+	var ideas = req.body.ideas;
 
 
 	//if email is found, it will be passed into the callback function's "entry" parameter.
