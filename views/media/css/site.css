@@ -4,6 +4,18 @@
     margin-bottom: 10px;
 }
 
+.btn {
+    font-size: 18px;
+}
+
+h1, h2, h3 {
+    color: inherit;
+}
+
+section {
+    padding: 20px 0;
+}
+
 .services hr {
     border-top: 1px solid #333333;
 }
@@ -96,4 +108,21 @@ ul li {
 
 #navigation-table {
     margin: auto;
+}
+
+#vote-container {
+
+}
+
+.ideas label {
+    display: block;
+    padding: 8px;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+}
+
+.ideas label h3 {
+    margin-top: 0px;
 }
