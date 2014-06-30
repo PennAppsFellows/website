@@ -13,9 +13,11 @@ var VoteSchema = new Schema({
 	 idea: {type: "Number"}
 });
 try {
+	console.log("enters try block");
 	var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
 }
-catch(error) {}
+catch(error) {console.log("catches error")}
+console.log("outside try-catch");
 
 
 app.set('port', (process.env.PORT || 8080))
