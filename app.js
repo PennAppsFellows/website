@@ -12,8 +12,10 @@ var VoteSchema = new Schema({
 	email: {type: "String"},
 	 idea: {type: "Number"}
 });
-
-var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
+try {
+	var Vote = mongoose.model('Vote', VoteSchema, 'Votes');
+}
+catch(error) {}
 
 
 app.set('port', (process.env.PORT || 8080))
